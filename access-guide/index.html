@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    ol {
+  counter-reset: item
+}
+li {
+  display: block
+}
+li:before {
+  content: counters(item, ".") ")";
+  counter-increment: item
+}
+.underline {
+    text-decoration: underline;
+}
+    main{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+    p   {max-width:1200px; word-wrap:break-word;}
+    ul  {max-width:1200px; word-wrap:break-word;}
+    code{font-size:large;}
+    h1  {background-color:#005035; color:white; padding:0.2em; border-radius:5px}
+    h2  {background-color:#005035; color:white; padding:0.1em; border-radius:5px; display:inline-block;}
+    h3  {text-decoration: underline}
+</style>
+
+<head>
+    <title>Accessibility Guide</title>
+</head>
+
+<main>
+
+<a href="#toc">Skip to Content Search</a>
+
+<h1 id="title">Liam's Reference Sheet to Digital Accessibility</h1>
+
+    <p>
+    This page is designed to be a supplemental material for those created by any other UNC Charlotte entities, with the express intent of 
+    making something directly applicable to the situation of educators on campus, most specifically the College of Computing and Informatics. 
+    As such, I've broken this guide down by a few general types of things I think we as educators need to be expressly concerned with in making 
+    our educational materials accessible.
+    </p>
+
+    <p>
+    Interpreting <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines</a> (WCAG) is a little difficult, so I've relied on an external resource which has created a wonderful 
+    <a href="https://accessible.org/wcag/">downloadable checklist for WCAG compliance</a> so that I don't have to. I've taken the extra step of organizing this content down by 
+    type of material, or course consideration, which needs to be taken, such that we can focus on immediate needs for each type of work item.
+    </p>
+
+    <h2 id="title:interpretation">Interpreting This Guide</h2>
+
+        <p>
+            As you work to make your course accessible, you need to consider every element of the course and how you need to make adjustments (if you do) to be accessible. This guide provides 
+            basic definitions of a few types of course content (webpages, documents, etc.) and then a list of general accessibility tasks, along with specific WCAG codes, to reach accessibility 
+            compliance with that component.
+        </p>
+
+        <p>
+            <b>Of great importance:</b> A single piece of course content can and most likely <b>will</b> be classified in multiple categories. For example, a pdf file detailing an assignment is 
+            both an assignment AND a document. Generally speaking, almost everything is a document, and other tags will apply based on their definitions and your interpretation. When in doubt, 
+            subject what you're doing to <b>more</b> guidelines, rather than less.
+        </p>
+
+
+<h1 id="toc">Skip to Specific Content</h1>
+
+<ol>
+
+    <li>
+        <a href="#title">Liam's Reference Sheet to Digital Accessibility</a>
+        <ol>
+
+            <li>
+                <a href="#title:interpretation">Interpreting This Guide</a>
+            </li>
+
+        </ol>
+    </li>
+
+    <li>
+        <a href="#toc">Skip to Specific Content</a>
+    </li>
+
+    <li>
+        <a href="#content">Course Content</a>
+        <ol>
+
+            <li>
+                <a href="#content:assignments">Documents</a>
+                <ol>
+
+                    <li>
+                        <a href="#content:assignments:sensinstructions">Sensory Instructions</a>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>
+                <a href="#content:documents">Documents</a>
+                <ol>
+
+                    <li>
+                        <a href="#content:documents:alttext">Alt Text</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:documents:color">Color</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:documents:hyperlinks">Hyperlinks</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:documents:readingorder">Reading Order</a>
+                    </li>
+
+                </ol>
+            </li>
+            
+            <li>
+                <a href="#content:lectures">Lectures</a>
+                <ol>
+
+                    <li>
+                        <a href="#content:lectures:audiodesc">Audio Descriptions</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:lectures:livecaptions">Live Captions</a>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>
+                <a href="#content:nontextcontent">Videos and Audio</a>
+                <ol>
+                    <li>
+                        <a href="#content:nontextcontent:alternatives">Video and Audio Alternatives</a>
+                    </li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="#content:websites">Webpages</a>
+                <ol>
+
+                    <li>
+                        <a href="#content:websites:labels">Consistency and Labeling</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:errors">Error Resolution</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:flashing">Flashing Elements</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:fontsizing">Font Sizing</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:keyboardnav">Keyobard Navgiation</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:language">Language Identification</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:pagecontrol">Page Control</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:semantichtml">Semantic HTML</a>
+                    </li>
+
+                    <li>
+                        <a href="#content:websites:webnav">Website Navigation</a>
+                    </li>
+
+                </ol>
+            </li>
+
+        </ol>
+    </li>
+
+    <li>
+        <a href="#changelog">Changelog</a>
+    </li>
+
+</ol>
+
+
+<h1 id="content">Course Content</h1>
+
+    <h2 id="content:assignments">Assignments</h2>
+
+        <h3>Description</h3>
+
+        <p>
+            This section shows changes required for any assignment given in the course; this could be through an LMS, website, on paper, verbally, anything. If it is a task a student will do, 
+            it should consider these requirements.
+        </p>
+
+        <h3 id="content:assignments:sensinstructions">Sensory Instructions</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.3.3</i>: When providing detailed instructions, make it so they aren't reliant on a single sensory ability.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    When creating instructions for assignments or lessons, make sure that you don't rely on a single sensory ability. A lesson centered around "looking" at something 
+                    clearly needs alternative instructions, or alternative design, to accommodate those that can't see. You can extrapolate this to hearing, touch, tasting, and smelling too.
+                </p>
+
+    <h2 id="content:documents">Documents</h2>
+
+        <h3>Description</h3>
+
+        <p>
+            Documents includes anything that students need to parse. This is Word files, pdfs, websites, LMS pages, anything that involves a handout or piece of information students interact 
+            with.
+        </p>
+
+        <h3 id="content:documents:alttext">Alt Text</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.1.1</i>: All images and non-text content that conveys necessary meaning or information needs a text alternative.<br>
+                    <i>WCAG 2.0AA Criterion 1.4.5</i>: Do not use images of text unless necessary (e.g., logo). 
+                </p>
+
+            <h4>Tips To Comply</h4>
+
+                <p>
+                    When creating alt text for an image, consider what you want readers to get from that image. A good alt text description is not overly long, and focuses on 
+                    just the core idea that needs to be conveyed from the image; do not include superfluous information, like the colors of clothing, adjectives describing things, and similar 
+                    "fluff," unless they are necessary to convey. As part of that, expecting users to "read" an image isn't great; just don't do it.
+                </p>
+
+                <p>
+                    Additionally, if there isn't anything important to convey in an image, mark it as decorative. In raw html, this means leaving the alt text as an empty string ("").
+                </p>
+
+        <h3 id="content:documents:color">Color</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.4.1</i>: Do not rely on color alone to convey information.<br>
+                    <i>WCAG 2.0AA Criterion 1.4.3</i>: There must be a color contrast ratio of at least 4.5:1 between regular text and background and 3:1 for large text. 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    These two criterion ask you to carefully consider how color is used in your documents; the first specifies that you need more than color to signify the difference 
+                    between items in your documents. Other ways to convey information in this way is texture (for images, graphs), typeface (for text) or tagging (such as headers, text tags). 
+                    The second asks you to use high-contrast color combinations for content that is visually important, to help break them out from the background. White on black is fine, but 
+                    for everything else, use this <a href="https://webaim.org/resources/contrastchecker/">color contrast checker</a>.
+                </p>
+
+        <h3 id="content:documents:hyperlinks">Hyperlinks</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 2.4.4</i>: The purpose of each link should be clear based on its anchor text (e.g., don't use “click here”, etc.). 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    This is an important one, and takes time and skill to develop! When a user using a screenreader looks over a page, just like when we press tab, they can 
+                    quickly access all links on a page, and their screenreader will tell them the hyperlink text. As a sighted person, I rely on the context around the "click here!" to 
+                    figure out where it will take me; cut it out! Make the hyperlink text itself describe where the link takes the user (i.e. "KhanAcademy website" or "fully online course textbook")
+                </p>
+        
+        <h3 id="content:documents:readingorder">Reading Order</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.3.2</i>: If sequence of content affects meaning, a correct reading order can be programmatically determined.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    As this applies to any document, it means that there needs to be some way for a user accessing the document through technology (for example, a screenreader) should 
+                    be able to experience the correct reading order. A fantastic example of where this can fall apart is two-column, where without proper tagging, there is no established 
+                    reading order, so content is read left to right, regardless of column.
+                </p>
+
+                <p>
+                    If you're making a document format (pdf, pptx, etc), ensure that the reading order is set correctly; this can often be done by using an accessibility checker in 
+                    your software to make it or edit it. It is also worth noting that source documents (docx, odf, etc) are far easier to access than rendered formats (pdf).
+                </p>
+
+                <p>
+                    If you're making a website, make sure that the content is laid out in the source code in your intended reading order; this ensures that those accessing it 
+                    programmatically will get the experience you intend.
+                </p>
+
+    <h2 id="content:lectures">Lectures</h2>
+    
+        <h3>Description</h3>
+
+            <p>
+                This section is not just for online lectures or recordings, which are subject to these criterion, but also all lectures generally. Practicing accessible presenting skills will 
+                make the work creating or refining digital lecture material far easier, since you'll potentially have practice (and recordings!).
+            </p>
+
+        <h3 id="content:lectures:audiodesc">Audio Descriptions</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.2.3</i>: For any video where meaningful information is not available audibly, add a transcript or an audio description describing that information.<br>
+                    <i>WCAG 2.0AA Criterion 1.2.5</i>: An audio description is optional under 1.2.3 level A but not in 1.2.5 AA. The best route is to provide both a transcript (optional) and an audio description but the audio description is required.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Giving effective audio descriptions is a skill, and one that may take time to develop. The core idea is to stop relying on visual cues or instructions in your lecture content, and 
+                    instead sharing the information that would be gained visually through audio. This means creating a sort of "alt text" for images in your lectures, but it also means relying less on 
+                    visual cues to support your lecture. Try removing phrases like "if you look here..." from your vocabulary when teaching, since to a VI student, this means nothing.
+                </p>
+
+        <h3 id="content:lectures:livecaptions">Live Captions</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0AA Criterion 1.2.4</i>: More formal, live presentations must have closed captions. 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    When presenting in class, it is best practice to have captions, whether you are recording or not. If you utilize some slides (powerpoint, google slides), both of those tools 
+                    have built in capacity to generate live captions, you just need to look up how for your program.
+                </p>
+
+                <p>
+                    If you are switching between content, or relying on content outside of a slide deck, then the next best option it to utilize a program like Zoom to provide automatic captions 
+                    for your class. If your class is in person, utilize the second monitor provided in classrooms to share content from one screen to the other; make sure that Zoom is the available 
+                    screen being shared, so that students can see the captions. Finally, while you're here, why not provide hybrid flexibility, and also record your lecture for the future? Most of the 
+                    steps have already been taken.
+                </p>
+
+    <h2 id="content:nontextcontent">Videos and Audio</h2>
+
+        <h3>Description</h3>
+
+        This refers to all non-text, non-document based media given to students that isn't interactive: think of recordings, podcasts, audiobooks, etc. As with everything else, ADA Title II applies not 
+        just to the content you make, but the content you decide to share as well. Make sure that all audio and videos you share meet these goals.
+
+        <h3 id="content:nontextcontent:alternatives">Video and Audio Alternatives</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.2.1</i>: All video-only and audio-only content has a text transcript. Transcripts are clearly labeled and available near the media.<br>
+                    <i>WCAG 2.0A Criterion 1.2.2</i>: All video with sound has closed captioning. <br>
+                    <i>WCAG 2.0A Criterion 1.2.3</i>: For any video where meaningful information is not available audibly, add a transcript or an audio description describing that information. <br>
+                    <i>WCAG 2.0AA Criterion 1.2.5</i>: An audio description is optional under 1.2.3 level A but not in 1.2.5 AA. The best route is to provide both a transcript (optional) and an audio description but the audio description is required. 
+                </p>
+
+            <h4>Tips To Comply</h4>
+
+                <p>
+                    These four compliance goals focus on creating accessible video and audio content for students. There are a few key goals in this, which you should always aim for:
+                </p>
+
+                <ol>
+                    <li>
+                        Always have a text transcript available for visual/audio content.
+                    </li>
+                    <li>
+                        When creating videos, make sure that they still convey all content <i>with audio only</i>.
+                    </li>
+                    <li>
+                        When creating videos, make sure that they still convey all content <i>without any audio</i>.
+                    </li>
+                </ol>
+
+                <p>
+                    The first goal is relatively easy to reach, especially for videos uploaded to Canvas Studio; it automatically generates captions, but <b>YOU MUST</b> review and 
+                    correct those captions before distributing it. One those captions are generated, you can also export and use them as a transcript alternative for students.
+                </p>
+
+                <p>
+                    As far as creating meaningful alternatives, criterion <i>1.2.3</i> and <i>1.2.5</i> essentially ask you to make sure that listeners without visuals can get the 
+                    entire experience. A great way to check this is by listening to any video you create or use without the visuals, like a podcast. If you cannot fully understand it 
+                    (or rather, a student couldn't fully understand it) from just the audio alone, it's not compliant. Criterion <i>1.2.2</i> also asks for the opposite, so a good way 
+                    to check this for access is to watch videos on mute, and rely only on the captions. Again, determine if this method of viewing also effectively conveys content.
+                </p>
+
+                <p>
+                    Recommendations for developing the skills to convey visual content through audio are included under the 
+                </p>
+
+    <h2 id="content:websites">Webpages</h2>
+
+        <h3>Description</h3>
+
+        <p>
+            This section details requirements for webpages generally. This includes LMS pages, but also your own site(s) you may link to, and any website you link to, even if you don't own 
+            or run it in anyway.
+        </p>
+        
+        <h3 id="content:websites:labels">Consistency and Labeling</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0AA Criterion 3.2.4</i>: Components that have the same function within a website are identified consistently (but not necessarily identically).<br>
+                    <i>WCAG 2.0A Criterion 3.1.2</i>: Provide clear visual and programmatic labels or instructions for user input fields, ensuring users understand what information is required and how to input it.<br>
+                    <i>WCAG 2.0A Criterion 4.1.2</i>: For all user interface components (including forms, links, components generated by scripts), the name, role, state, and/or value should all be able to be programmatically determined.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Everything should be labeled, and you should be consistent about how you label it. Enough said.
+                </p>
+        
+        <h3 id="content:websites:errors">Error Resolution</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 3.3.1</i>: Make any form errors easy to identify, understand, and correct.<br>
+                    <i>WCAG 2.0AA Criterion 3.3.3</i>: If an input error is automatically detected, then suggestions for correcting the error should be provided.<br>
+                    <i>WCAG 2.0AA Criterion 3.3.4</i>: For pages that create legal commitments or financial transactions or any other important data submissions, one of the following is true: 1) submissions are reversible, 2) the user has an opportunity to correct errors, and 3) confirmation is available that allows an opportunity to review and correct before submission. 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    When asking users for input, it is best practice to make it clear to them where errors arise, and when possible, prevent them from submitting erroneous content. 
+                    This isn't super applicable for course content, but when it is, try and make it clear how we can actually overcome these issues!
+                </p>
+
+        <h3 id="content:websites:flashing">Flashing Elements</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 2.3.1</i>: Web pages do not contain anything that flashes more than three times in any one second period.
+                </p>
+            
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Don't make using your website painful and/or harmful.
+                </p>
+
+        <h3 id="content:websites:fontsizing">Font Sizing</h3>
+                
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0AA Criterion 1.4.4</i>: Text must be able to be resized up to 200% without negatively affecting the ability to read content or use functions.
+                </p>
+            
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Make sure that your page scales well when text is scaled up (elements don't break, get truncated, etc), so that users that need to magnify the text can have a 
+                    clean experience.
+                </p>
+
+        <h3 id="content:websites:keyboardnav">Keyobard Navgiation</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 2.1.1</i>: All content and functions on a website must be accessible by keyboard only (i.e., no mouse).<br>
+                    <i>WCAG 2.0A Criterion 2.1.2</i>: Keyboard-only users must never get stuck on any part of the website; they must be able to navigate forwards and backwards.<br>
+                    <i>WCAG 2.0A Criterion 2.4.1</i>: Provide a way to bypass the header and go straight to the main content such as a skip link. Landmarks and headings also work.<br>
+                    <i>WCAG 2.0A Criterion 2.4.3</i>: Users must be able to navigate through a website in a logical, sequential order that preserves meaning. <br>
+                    <i>WCAG 2.0AA Criterion 2.4.7</i>: Any “user interface control” that receives focus from a keyboard user should have a focus indicator that indicates that focus visually.<br>
+                    <i>WCAG 2.0A Criterion 3.2.1</i>: Nothing changes merely because an item receives focus; a user must actively choose to activate an item (e.g., hit enter to submit) before a change takes place. <br>
+                    <i>WCAG 2.0A Criterion 3.2.2</i>: User interface changes or actions shouldn't automatically occur due to input (e.g., form doesn't auto submit once all fields are filled out). 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    The down and dirty here is to make your website keyboard accessible, which is something anyone can test. If nagivating your pages is cumbersome or annoying, its likely not accessible. 
+                    Of particular note here is the importance of focus, which is the state an element will be in when hovered or tab-selected; make sure to let users know where they are, and don't make 
+                    focus do something that users may not want (like opening a dropdown of options, for example). In general, let users know where they are, make navigation easy and make sense, and don't 
+                    do anything without the user initiating it by pressing a button on their keyboard.
+                </p>
+
+        <h3 id="content:websites:language">Language Identification</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 3.1.1</i>: Set the language for your website.<br>
+                    <i>WCAG 2.0AA Criterion 3.1.2</i>: Indicate any language changes for an entire page or within the content.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Make sure users can know what language the page is in! This can be marked in the <code class="language-html">html</code> tag itself, or 
+                    in any other element using the <code class="language-html"code>lang</code> attribute. Specific to coding, you can also mark languages inside of code blocks!
+                </p>
+
+        <h3 id="content:websites:pagecontrol">Page Control</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.4.2</i>: Any audio must be able to be paused, stopped, or muted.<br>
+                    <i>WCAG 2.0A Criterion 1.4.2</i>: If there any time limits on a website, users have the ability to turn it off, adjust it, extend it.<br>
+                    <i>WCAG 2.0A Criterion 1.4.2</i>: If there is content that blinks, scrolls, moves, users must have the ability to pause, stop, or hide it.
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    If you want students to access a website, make sure there aren't temporal hurdles or barriers that could impede students, and let them control how content moves. 
+                    Let them pause carousels and audio easily, and let them take their time or change the amount of time it takes to do something. I think most of us have dealt with things 
+                    that are annoyingly timed; now imagine trying to handle that same task from a keyboard. Give users control over content that auto-plays, simple as. 
+                </p>
+
+        <h3 id="content:websites:semantichtml">Semantic HTML</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 1.3.1</i>: Use proper HTML markup techniques to structure your website's content.<br>
+                    <i>WCAG 2.0AA Criterion 2.4.6</i>: Headings and programmatic labels must be clear and descriptive. They do not need to be lengthy.<br>
+                    <i>WCAG 2.0A Criterion 4.1.1</i>: Make sure HTML code is clean and free of errors, particularly missing bracket closes. Also, make sure all HTML elements are properly nested. 
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    Use <a href="https://web.dev/learn/html/semantic-html">semantic html</a> anytime you write some digital content in HTML! <code class="language-html">div</code> and 
+                    <code class="language-html">span</code> elements tell users nothing about the purpose or role of content, while there are many semantic tags that do! If you 
+                    have digital content, consider how easy it is to tell what each element of a page does (or is) based solely on the tags surrounding them. Additionally, 
+                    keep semantic names clear and concise for easy of navigation.
+                </p>
+
+        <h3 id="content:websites:webnav">Website Navigation</h3>
+
+            <h4>Specific Description</h4>
+
+                <p>
+                    <i>WCAG 2.0A Criterion 2.4.2</i>: Each page of a website needs to have a unique and descriptive page title.<br>
+                    <i>WCAG 2.0AA Criterion 2.4.5</i>: There are multiple ways to access different pages/information on a website (e.g., search bar, nav menus, sitemap, breadcrumbs, etc.).<br>
+                    <i>WCAG 2.0AA Criterion 3.2.3</i>: Keep navigation links / layout consistent throughout all pages of the website (i.e., same links in the same order).
+                </p>
+
+            <h4>Tips to Comply</h4>
+
+                <p>
+                    These three criterion are about making sure that users can easily get from one page to another, and understand what page they are on relative to others at any given time. 
+                    Most of this is solved by having clear navigational elements, a coherent (if possible) sitemap, and making sure your pages have titles.
+                </p>
+
+<p><a href="#toc">Return to Navigation</a></p>
+
+    <h2 id="changelog">Changelog</h2>
+
+        <p>
+            Changes are sorted by recency (more recent first).
+        </p>
+
+        <h3 id="03/03/2026">Tuesday, March 3rd, 2026</h3>
+
+        <p>
+            Finished adding WCAG 2.0A/AA content to the content section. WCAG 2.1A/AA planned Thursday, March 5th.
+        </p>
+
+<p><a href="#toc">Return to Navigation</a></p>
+
+</main>
+</html>
